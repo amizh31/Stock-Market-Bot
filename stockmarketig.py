@@ -1,16 +1,39 @@
-import pyautogui
 from time import sleep
 import requests
 import bs4
 from selenium import webdriver
 
 check = "No"
-PATH = "chromedriver.exe"
-driver = webdriver.Chrome(PATH)
+#PATH = "C:\Users\User\Downloads\J.A.R.V.I.S\Stock Market\chromedriver.exe"
+driver = webdriver.Chrome('C:\\Users\\User\\Downloads\\J.A.R.V.I.S\\Stock Market\\chromedriver.exe')
 sleep(5)
 driver.get("https://invest.motilaloswal.com/Home/LoginPage")
-pyautogui.hotkey('Win', 'Up')
 sleep(5)
+login = driver.find_element_by_xpath("/html/body/div[2]/div[2]/div/div/div[2]/a")
+login.click()
+sleep(1)
+username = driver.find_element_by_id("LoginId")
+username.click()
+sleep(1)
+username.send_keys("8675983445")
+password = driver.find_element_by_id("MainPassword")
+password.click()
+password.send_keys("ILVJune06")
+sleep(1)
+sleep(1)
+enter = driver.find_element_by_id("btnLoginInv")
+enter.click()
+sleep(5)
+watchlist = driver.find_element_by_xpath("/html/body/header/nav/div/div/div[2]/div[2]/ul/li[1]/a/img")
+watchlist.click()
+sleep(1)
+search = driver.find_element_by_id("inputSearch")
+search.click()
+search.send_keys("Vodafone Idea")
+sleep(1)
+idea = driver.find_element_by_xpath("//*[@id='listData']/li[1]/div[1]/p[1]/a")
+idea.click()
+"""
 username = driver.find_element_by_class_name("form-control")
 username.click()
 sleep(1)
@@ -25,6 +48,7 @@ enter.click()
 sleep(10)
 watchlist = driver.find_element_by_link_text("Watchlist")
 watchlist.click()
+"""
 print("Vodafone IDEA")
 while 1 == 1:
     sourceurl = requests.get('https://www.google.com/finance/quote/IDEA:NSE')
