@@ -1,5 +1,3 @@
-import os
-import pyautogui
 from time import sleep
 import requests
 import bs4
@@ -30,8 +28,6 @@ watchlist.click()
 hour = int(datetime.datetime.now().strftime("%H"))
 print("Vodafone Idea")
 while 1 == 1:
-    hour = int(datetime.datetime.now().strftime("%H"))
-    minute = int(datetime.datetime.now().strftime("%M"))
     sourceurl = requests.get('https://www.google.com/finance/quote/IDEA:NSE')
     gettext = bs4.BeautifulSoup(sourceurl.text, 'html.parser')
     sourcetag = gettext.find_all('div', attrs = {'class':'YMlKec fxKbKc'})
@@ -103,4 +99,3 @@ while 1 == 1:
             close = driver.find_element_by_xpath("//*[@id='dvOrderDataForm']/img")
             close.click()
             check = "No"
-#os.system("shutdown /h /t 15")
