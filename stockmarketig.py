@@ -29,7 +29,7 @@ watchlist = driver.find_element_by_link_text("Watchlist")
 watchlist.click()
 hour = int(datetime.datetime.now().strftime("%H"))
 print("Vodafone Idea")
-while hour < 15:
+while 1 == 1:
     hour = int(datetime.datetime.now().strftime("%H"))
     minute = int(datetime.datetime.now().strftime("%M"))
     sourceurl = requests.get('https://www.google.com/finance/quote/IDEA:NSE')
@@ -103,4 +103,4 @@ while hour < 15:
             close = driver.find_element_by_xpath("//*[@id='dvOrderDataForm']/img")
             close.click()
             check = "No"
-    #os.system("shutdown /h /t 15")
+#os.system("shutdown /h /t 15")
