@@ -2,15 +2,15 @@ from time import sleep
 import requests
 import bs4
 from selenium import webdriver
+import pyautogui
 import datetime
 
 check = "No"
-PATH = "C:\\Program Files (x86)\\chromedriver.exe"
+PATH = "chromedriver.exe"
 driver = webdriver.Chrome(PATH)
 sleep(5)
 driver.get("https://invest.motilaloswal.com/Home/LoginPage")
-pyautogui.hotkey('Win', 'Up')
-sleep(5)
+pyautogui.hotkey('Win', 'Up')sleep(5)
 username = driver.find_element_by_class_name("form-control")
 username.click()
 sleep(1)
