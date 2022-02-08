@@ -1,7 +1,6 @@
 import os
 import pyautogui
 from time import sleep
-from pyttsx3 import speak
 import requests
 import bs4
 from selenium import webdriver
@@ -28,8 +27,6 @@ enter.click()
 sleep(10)
 watchlist = driver.find_element_by_link_text("Watchlist")
 watchlist.click()
-print("Vodafone IDEA")
-speak("Hello Vodafone Idea")
 hour = int(datetime.datetime.now().strftime("%H"))
 while hour < 15:
     hour = int(datetime.datetime.now().strftime("%H"))
@@ -51,9 +48,7 @@ while hour < 15:
     presD = float(source1)
     if prevD < presD:
         if check == "Yes":
-            speak("hello profit")
         elif check == "No":
-            speak("Hello profit change")
             sleep(1)
             buy = driver.find_element_by_link_text("BUY")
             buy.click()
@@ -79,9 +74,7 @@ while hour < 15:
             check = "Yes"
     elif prevD > presD:
         if check == "No":
-            speak("hello loss")
         elif check == "Yes":
-            speak("hello loss change")
             sleep(1)
             sell = driver.find_element_by_link_text("SELL")
             sell.click()
@@ -105,5 +98,4 @@ while hour < 15:
             close = driver.find_element_by_xpath("//*[@id='dvOrderDataForm']/img")
             close.click()
             check = "No"
-    print(prevD, presD)
-#os.system("shutdown /h /t 15")
+    #os.system("shutdown /h /t 15")
