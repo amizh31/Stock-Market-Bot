@@ -28,6 +28,7 @@ sleep(10)
 watchlist = driver.find_element_by_link_text("Watchlist")
 watchlist.click()
 hour = int(datetime.datetime.now().strftime("%H"))
+print("Vodafone Idea")
 while hour < 15:
     hour = int(datetime.datetime.now().strftime("%H"))
     minute = int(datetime.datetime.now().strftime("%M"))
@@ -48,7 +49,9 @@ while hour < 15:
     presD = float(source1)
     if prevD < presD:
         if check == "Yes":
+            print("profit")
         elif check == "No":
+            print("profit change")
             sleep(1)
             buy = driver.find_element_by_link_text("BUY")
             buy.click()
@@ -74,7 +77,9 @@ while hour < 15:
             check = "Yes"
     elif prevD > presD:
         if check == "No":
+            print("loss")
         elif check == "Yes":
+            print("loss change")
             sleep(1)
             sell = driver.find_element_by_link_text("SELL")
             sell.click()
