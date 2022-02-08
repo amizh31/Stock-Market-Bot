@@ -5,7 +5,7 @@ from selenium import webdriver
 
 check = "No"
 #PATH = "C:\Users\User\Downloads\J.A.R.V.I.S\Stock Market\chromedriver.exe"
-driver = webdriver.Chrome('C:\\Users\\User\\Downloads\\J.A.R.V.I.S\\Stock Market\\chromedriver.exe')
+driver = webdriver.Chrome('chromedriver.exe')
 sleep(5)
 driver.get("https://invest.motilaloswal.com/Home/LoginPage")
 sleep(5)
